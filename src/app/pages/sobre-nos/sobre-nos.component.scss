@@ -1,0 +1,22 @@
+.example-card {
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2em;
+  }
+  
+  p{
+      font-size: 1.5em;
+      text-align: justify;
+      font-family: 'Courier New', Courier, monospace;
+  }
+  .example-header-image {
+    background-image: url('../../../assets/images/sobre_nos.jpg');
+    background-size: cover;
+  }
+
+  img{
+      height: 500px;
+      width: 100%;
+      padding: 10px;
+  }
