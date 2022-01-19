@@ -1,0 +1,81 @@
+<!-- formulario contatos -->
+<section class="container" [formGroup]="form">
+
+  <div class="title">
+    <h2>Preencha seu cadastro</h2>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field class="full-width" hintLabel="Max 60 characters" appearance="outline">
+      <mat-label>Informe seu nome</mat-label>
+      <input matInput #nome maxlength="60" placeholder="Ex. Fulano Silva" formControlName="nome" required>
+      <mat-error *ngIf="form.get('nome')?.errors?.required || form.get('nome')?.errors">
+        {{getErrorName()}}
+      </mat-error>
+      <mat-hint align="end">caracteres restantes {{limitCaracteres - nome.value.length}}</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field class="full-width ml-space" appearance="outline">
+      <mat-label>Informe seu email</mat-label>
+      <input matInput placeholder="teste@example.com" formControlName="email" required>
+      <mat-error *ngIf="form.get('email')?.errors?.required || form.get('email')?.errors">
+        {{getErrorMessage()}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Endereço</mat-label>
+      <input matInput #endereco maxlength="60" formControlName="endereco" placeholder="Ex: Avenida Paulista, 1374, Bela Vista, São Paulo">
+      <mat-hint align="end">caracteres restantes {{limitCaracteres - endereco.value.length}}</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Selecione o País</mat-label>
+      <mat-select formControlName="pais" required>
+        <mat-option *ngFor="let pais of paises" value="{{pais.id}}" selected="pais.id === pais'">
+          {{pais.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Cidade</mat-label>
+      <mat-select formControlName="cidade" required>
+        <mat-option *ngFor="let state of states" value="{{state.id}}" selected="state.id === cidade'">
+          {{state.nome}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Telefone</mat-label>
+      <span matPrefix>+55 &nbsp;</span>
+      <input type="text" matInput formControlName="telefone" 
+      placeholder="(00) 00000-0000" mask="(00) 00000-0000"
+      required
+      >
+    </mat-form-field>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Adicione um comentário</mat-label>
+      <textarea matInput #comentario maxlength="{{limitComentarios}}" 
+      placeholder="Ex. Escreva seu comentário..." formControlName="comentario"></textarea>
+      <mat-hint>caracteres restantes {{limitComentarios - comentario.value.length}}</mat-hint>
+    </mat-form-field>
+  </div>
+  
+  <div class="example-container btn-container">
+    <div class="example-button-row">
+      <button mat-raised-button color="primary" (click)="enviarFormulario()"
+        [disabled]="!this.form.valid">Enviar</button>
+      <button mat-raised-button color="warn" (click)="reset()">limpar</button>
+    </div>
+  </div>
+</section>

@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&family=Ubuntu:wght@300;400&display=swap');
+
+html, body { 
+    height: 100%;
+    background: url('../src/assets/images/fundo.jpg');
+ }
+body { 
+    margin: 0; 
+    font-family: 'Ubuntu', sans-serif;
+    background-color: rgb(11, 98, 104);
+}
