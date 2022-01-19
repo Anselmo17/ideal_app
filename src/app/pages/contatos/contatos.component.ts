@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { State } from 'src/app/models/states';
 import { UtilService } from 'src/app/services/util/util.service';
@@ -16,6 +18,13 @@ export class ContatosComponent {
 
   limitCaracteres = 60;
   limitComentarios = 280;
+
+  isLoanding = true;
+
+  // spinner
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value = 10;
 
   constructor(
     private utilService: UtilService
