@@ -1,5 +1,15 @@
+<!-- spinner -->
+<section class="container" *ngIf="isLoanding">
+  <mat-card>
+    <mat-card-content class="ctn-spinner">
+      <h2 class="example-h2">Carregando...</h2>
+      <app-spinner></app-spinner>
+    </mat-card-content>
+  </mat-card>
+</section>
+
 <!-- formulario contatos -->
-<section class="container" [formGroup]="form">
+<section class="container" [formGroup]="form" *ngIf="!isLoanding">
 
   <div class="title">
     <h2>Preencha seu cadastro</h2>

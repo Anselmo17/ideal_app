@@ -7,6 +7,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { ContatosRoutingModule } from './contatos-routing.module';
 import { ContatosComponent } from './contatos.component';
 import { MatSelectModule } from '@angular/material/select';
+import { SpinnerComponent } from 'src/app/components/spinner/spinner.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,10 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     NgxMaskModule.forRoot()
   ],
-  declarations: [ContatosComponent],
+  declarations: [
+    ContatosComponent,
+    SpinnerComponent
+  ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

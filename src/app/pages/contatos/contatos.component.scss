@@ -85,3 +85,14 @@ section {
 .btn-container {
   margin-bottom: 10px;
 }
+
+.ctn-spinner {
+  display: grid;
+  margin-left: 0px;
+  margin-right: 0px;
+  justify-content: center;
+}
+
+.mat-card>:first-child, .mat-card-content>:first-child {
+  margin-top: 10%;
+}
