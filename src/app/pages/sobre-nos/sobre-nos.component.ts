@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobreNosComponent implements OnInit {
 
-  comments:any = [
+  comments: any = [
     {
       name: 'Joao Silva',
       perfil: 'cliente',
@@ -71,9 +71,9 @@ export class SobreNosComponent implements OnInit {
   ]
 
 
-constructor() { }
+  constructor() { }
 
-ngOnInit(): void {
-}
+  ngOnInit(): void {
+  }
 
 }
