@@ -19,7 +19,7 @@ export class ContatosComponent {
   limitCaracteres = 60;
   limitComentarios = 280;
 
-  isLoanding = true;
+  isLoanding = false;
 
   // spinner
   color: ThemePalette = 'primary';
